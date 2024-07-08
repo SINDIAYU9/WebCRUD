@@ -152,7 +152,7 @@ $siswa = query("SELECT * FROM siswa ORDER BY nis DESC");
                     <br><br><br>
                     <p>
                          Pembuat:
-                         1. Farhan Ade Atalarik (2135038)
+                         SINDI,WILSON,HAIQAL
                     </p>
                </div>
           </div>
