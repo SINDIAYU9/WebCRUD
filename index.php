@@ -151,7 +151,6 @@ $siswa = query("SELECT * FROM siswa ORDER BY nis DESC");
                     <h4 class="fw-bold text-uppercase">POLITEKNIK GAJAH TUNGGAL</h4>
                     <br><br><br>
                     <p>
-                         Pembuat:
                          SINDI,WILSON,HAIQAL
                     </p>
                </div>
