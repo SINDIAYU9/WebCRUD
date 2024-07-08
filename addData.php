@@ -167,8 +167,7 @@ if (isset($_POST['simpan'])) {
                     <h4 class="fw-bold text-uppercase">About</h4>
 
                     <p>
-                         Pembuat:
-                         1. Farhan Ade Atalarik (2135038)
+                        SINDI WILSON HAIQAL
                     </p>
                </div>
           </div>
