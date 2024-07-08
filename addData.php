@@ -89,9 +89,9 @@ if (isset($_POST['simpan'])) {
                <div class="col-md">
                     <form action="" method="post" enctype="multipart/form-data">
                          <div class="mb-3">
-                              <label for="nis" class="form-label">NIS</label>
-                              <input type="number" class="form-control w-50" id="nis" placeholder="Masukkan NIS" min="1"
-                                   name="nis" autocomplete="off" required>
+                              <label for="nim" class="form-label">NIM</label>
+                              <input type="number" class="form-control w-50" id="nim" placeholder="Masukkan NIM" min="1"
+                                   name="nim" autocomplete="off" required>
                          </div>
                          <div class="mb-3">
                               <label for="nama" class="form-label">Nama</label>
