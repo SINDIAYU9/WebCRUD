@@ -28,9 +28,9 @@ function tambah($data)
 
     $nis = htmlspecialchars($data['nis']);
     $nama = htmlspecialchars($data['nama']);
-    $tmpt_Lahir = htmlspecialchars($data['tmpt_Lahir']);
-    $tgl_Lahir = $data['tgl_Lahir'];
-    $jekel = $data['jekel'];
+    $tmpt_Lahir = htmlspecialchars($data['tempat_lahir']);
+    $tgl_Lahir = $data['tanggal_lahir'];
+    $jekel = $data['jenis_kelamin'];
     $jurusan = $data['jurusan'];
     $email = htmlspecialchars($data['email']);
     $gambar = upload();
@@ -40,7 +40,7 @@ function tambah($data)
         return false;
     }
 
-    $sql = "INSERT INTO siswa VALUES ('$nis','$nama','$tmpt_Lahir','$tgl_Lahir','$jekel','$jurusan','$email','$gambar','$alamat')";
+    $sql = "INSERT INTO siswa VALUES ('$nim','$nama','$tempat_lahir','$tanggal_lahir','$jenis_kelamin','$jurusan','$email','$gambar','$alamat')";
 
     mysqli_query($koneksi, $sql);
 
@@ -52,7 +52,7 @@ function hapus($nis)
 {
     global $koneksi;
 
-    mysqli_query($koneksi, "DELETE FROM siswa WHERE nis = $nis");
+    mysqli_query($koneksi, "DELETE FROM siswa WHERE nim = $nim");
     return mysqli_affected_rows($koneksi);
 }
 
@@ -61,24 +61,24 @@ function ubah($data)
 {
     global $koneksi;
 
-    $nis = $data['nis'];
+    $nim = $data['nim'];
     $nama = htmlspecialchars($data['nama']);
-    $tmpt_Lahir = htmlspecialchars($data['tmpt_Lahir']);
-    $tgl_Lahir = $data['tgl_Lahir'];
-    $jekel = $data['jekel'];
+    $tmpt_Lahir = htmlspecialchars($data['tempat_lahir']);
+    $tgl_Lahir = $data['tanggal_lahir'];
+    $jekel = $data['jenis_kelamin'];
     $jurusan = $data['jurusan'];
     $email = htmlspecialchars($data['email']);
     $alamat = htmlspecialchars($data['alamat']);
 
-    $gambarLama = $data['gambarLama'];
+    $gambar = $data['gambar'];
 
     if ($_FILES['gambar']['error'] === 4) {
-        $gambar = $gambarLama;
+        $gambar = $gambar;
     } else {
         $gambar = upload();
     }
 
-    $sql = "UPDATE siswa SET nama = '$nama', tmpt_Lahir = '$tmpt_Lahir', tgl_Lahir = '$tgl_Lahir', jekel = '$jekel', jurusan = '$jurusan', email = '$email', gambar = '$gambar', alamat = '$alamat' WHERE nis = $nis";
+    $sql = "UPDATE siswa SET nama = '$nama', tempat_lahir = '$tempat_lahir', tanggal_lahir = '$tanggal_lahir', jenis_kelamin = '$jenis_kelamin', jurusan = '$jurusan', email = '$email', gambar = '$gambar', alamat = '$alamat' WHERE nis = $nis";
 
     mysqli_query($koneksi, $sql);
 
@@ -111,8 +111,8 @@ function upload()
         return false;
     }
 
-    // Jika ukuran gambar lebih dari 3.000.000 byte maka akan menampilkan alert dibawah
-    if ($ukuranFile > 3000000) {
+    // Jika ukuran gambar lebih dari 5.000.000 byte maka akan menampilkan alert dibawah
+    if ($ukuranFile > 5000000) {
         echo "<script>alert('Ukuran gambar anda terlalu besar!');</script>";
         return false;
     }
